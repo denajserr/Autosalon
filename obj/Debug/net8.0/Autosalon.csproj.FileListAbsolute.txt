@@ -1,0 +1,16 @@
+E:\programming\c#\Autosalon\bin\Debug\net8.0\Autosalon.exe
+E:\programming\c#\Autosalon\bin\Debug\net8.0\Autosalon.deps.json
+E:\programming\c#\Autosalon\bin\Debug\net8.0\Autosalon.runtimeconfig.json
+E:\programming\c#\Autosalon\bin\Debug\net8.0\Autosalon.dll
+E:\programming\c#\Autosalon\bin\Debug\net8.0\Autosalon.pdb
+E:\programming\c#\Autosalon\obj\Debug\net8.0\Autosalon.GeneratedMSBuildEditorConfig.editorconfig
+E:\programming\c#\Autosalon\obj\Debug\net8.0\Autosalon.AssemblyInfoInputs.cache
+E:\programming\c#\Autosalon\obj\Debug\net8.0\Autosalon.AssemblyInfo.cs
+E:\programming\c#\Autosalon\obj\Debug\net8.0\Autosalon.csproj.CoreCompileInputs.cache
+E:\programming\c#\Autosalon\obj\Debug\net8.0\Autosalon.dll
+E:\programming\c#\Autosalon\obj\Debug\net8.0\refint\Autosalon.dll
+E:\programming\c#\Autosalon\obj\Debug\net8.0\Autosalon.pdb
+E:\programming\c#\Autosalon\obj\Debug\net8.0\Autosalon.genruntimeconfig.cache
+E:\programming\c#\Autosalon\obj\Debug\net8.0\ref\Autosalon.dll
+E:\programming\c#\Autosalon\bin\Debug\net8.0\Autosalon.runtimeconfig.dev.json
+E:\programming\c#\Autosalon\obj\Debug\net8.0\Autosalon.csproj.Up2Date
