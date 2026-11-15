@@ -11,6 +11,12 @@ namespace Autosalon
         const double MileagePerYear = 15.0;
         const double MaxMileageDiscount = 0.20;
         
+        const int MaxTableSize = 20;
+
+        static readonly string[] Brands = { "Toyota", "BMW", "Audi", "Skoda", "Ford" };
+        static readonly string[] Months = { "Січ", "Лют", "Бер", "Кві", "Тра", "Чер",
+            "Лип", "Сер", "Вер", "Жов", "Лис", "Гру" };
+        
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
@@ -39,7 +45,7 @@ namespace Autosalon
                         Pause();
                         break;
                     case "3":
-                        Console.WriteLine("Поки не зроблено.");
+                        ShowSalesTable();
                         Pause();
                         break;
                     case "0":
@@ -94,6 +100,60 @@ namespace Autosalon
                 double discount = Math.Min(MaxMileageDiscount, 0.002 * mileage);
                 double withMileage = byAge * (1 - discount);
                 Console.WriteLine("{0,8:F2}{1,14:F2}{2,14:F2}", years, byAge, withMileage);
+            }
+        }
+        static bool TryReadSize(string prompt, out int size)
+        {
+            Console.Write(prompt);
+            string text = Console.ReadLine();
+            if (!int.TryParse(text, out size) || size <= 0 || size > MaxTableSize)
+            {
+                Console.WriteLine($"Помилка: потрібне ціле число від 1 до {MaxTableSize}.");
+                return false;
+            }
+            return true;
+        }
+
+        static string RowName(int index)
+        {
+            return index < Brands.Length ? Brands[index] : "Марка " + (index + 1);
+        }
+
+        static string ColumnName(int index)
+        {
+            return index < Months.Length ? Months[index] : "М" + (index + 1);
+        }
+
+// умовні дані: справжні продажі з'являться разом зі сховищем
+        static int SoldCars(int row, int col)
+        {
+            return (row * 5 + col * 3 + row * col) % 9 + 1;
+        }
+
+        static void ShowSalesTable()
+        {
+            if (!TryReadSize("Кількість рядків (марок): ", out int rows)) return;
+            if (!TryReadSize("Кількість стовпців (місяців): ", out int cols)) return;
+
+            Console.WriteLine("\nПродано автомобілів за марками та місяцями");
+            Console.Write("{0,-11}", "Марка");
+            for (int c = 0; c < cols; c++)
+            {
+                Console.Write("{0,5}", ColumnName(c));
+            }
+            Console.WriteLine("{0,7}", "Разом");
+
+            for (int r = 0; r < rows; r++)
+            {
+                int rowTotal = 0;
+                Console.Write("{0,-11}", RowName(r));
+                for (int c = 0; c < cols; c++)
+                {
+                    int value = SoldCars(r, c);
+                    rowTotal += value;
+                    Console.Write("{0,5}", value);
+                }
+                Console.WriteLine("{0,7}", rowTotal);
             }
         }
     }
